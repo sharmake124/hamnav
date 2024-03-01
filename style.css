@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  margin: auto;
+  width: 100%;
+  max-height: 5rem;
+  background: rgb(238, 163, 22);
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul {
+  margin-top: 1em;
+  display: flex;
+  margin-right: 1em;
+}
+ul li {
+  list-style: none;
+  margin-left: 2em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+ul li a {
+  text-decoration: none;
+}
+
+ul li a:hover {
+  color: #fff;
+  transform: scale(2);
+  text-shadow: 1;
+}
+.logo img {
+  max-width: 5em;
+  max-height: 5em;
+}
+
+#label-ham,
+#ham {
+  display: none;
+}
+
+@media screen and (max-width: 650px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+    padding-top: 3rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem;
+  }
+  ul {
+    flex-direction: column;
+    margin-top: 9rem;
+    position: absolute;
+    margin-right: 7.5em;
+    align-items: center;
+  }
+  /* animation drop dwon*/
+  ul li {
+    animation: growDown 500ms ease-in-out forwards;
+    transform-origin: top center;
+  }
+
+  @keyframes growDown {
+    0% {
+      transform: scaleY(0);
+    }
+
+    100% {
+      transform: scaleY(1);
+    }
+  }
+  ul li {
+    display: none;
+    margin-top: 20px;
+    font-size: 1em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  ul li a:hover {
+    color: rgb(238, 163, 22);
+  }
+
+  #label-ham {
+    display: block;
+    position: fixed;
+    margin-right: 2.5em;
+    margin-bottom: 3rem;
+    font-size: 30px;
+  }
+
+  .navham input:checked + ul li {
+    display: block;
+  }
+}
